@@ -1,16 +1,8 @@
 """Generalized code to perform simulated annealing."""
 
 import random
-from typing import List
 
-from rothko.types import (
-    State,
-    NeighborFunc,
-    EnergyFunc,
-    TransProbFunc,
-    TemperatureFunc,
-)
-from rothko.transition_probabilities import kirkpatrick
+from rothko.types import EnergyFunc, NeighborFunc, State, TemperatureFunc, TransProbFunc
 
 
 def anneal(
@@ -26,7 +18,7 @@ def anneal(
     s: State = s_0
 
     for i in range(max_iters):
-        t = temp(1. - i / max_iters)
+        t = temp(1.0 - i / max_iters)
         s_new = neighbor(s)
 
         new_energy = energy(s_new)
