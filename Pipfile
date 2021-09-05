@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 numpy = "*"
+pre-commit = "*"
 
 [dev-packages]
 black = "==21.8b0"
